@@ -6,185 +6,35 @@
     <title>Nitish Kumar Panda | Level Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #060810;
-            --card: rgba(14, 20, 36, 0.7);
-            --accent: #4f6bff;
-            --accent2: #7c3aed;
-            --glow: rgba(79, 107, 255, 0.25);
-            --text: #f0f4ff;
-            --dim: #8892b0;
-            --border: rgba(255,255,255,0.06);
-        }
+        :root { --bg: #060810; --card: rgba(14, 20, 36, 0.7); --accent: #4f6bff; --accent2: #7c3aed; --text: #f0f4ff; --dim: #8892b0; --border: rgba(255,255,255,0.06); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* BACKGROUND EFFECTS */
-        .bg-grid {
-            position: fixed; inset: 0; z-index: -2;
-            background-image:
-                linear-gradient(rgba(79,107,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(79,107,255,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-        .bg-orb {
-            position: fixed; border-radius: 50%; filter: blur(120px);
-            z-index: -1; pointer-events: none;
-        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+        .bg-grid { position: fixed; inset: 0; z-index: -2; background-image: linear-gradient(rgba(79,107,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(79,107,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+        .bg-orb { position: fixed; border-radius: 50%; filter: blur(120px); z-index: -1; pointer-events: none; }
         .orb1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(79,107,255,0.15), transparent); top: -200px; right: -100px; animation: drift1 25s infinite alternate ease-in-out; }
         .orb2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(124,58,237,0.1), transparent); bottom: 200px; left: -100px; animation: drift2 30s infinite alternate ease-in-out; }
         @keyframes drift1 { from { transform: translate(0,0); } to { transform: translate(-150px, 300px); } }
         @keyframes drift2 { from { transform: translate(0,0); } to { transform: translate(100px, -200px); } }
-
-        /* HEADER */
-        header {
-            padding: 80px 20px 50px;
-            text-align: center;
-            position: relative;
-        }
-        .badge {
-            display: inline-block;
-            font-family: 'Syne', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent);
-            border: 1px solid rgba(79,107,255,0.3);
-            background: rgba(79,107,255,0.08);
-            padding: 6px 18px;
-            border-radius: 100px;
-            margin-bottom: 24px;
-        }
-        h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(36px, 6vw, 72px);
-            font-weight: 800;
-            letter-spacing: -3px;
-            line-height: 1.0;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 30%, #4f6bff 70%, #7c3aed 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .subtitle {
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            color: var(--dim);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-        }
-        .header-btns {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 28px;
-            border-radius: 8px;
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 0.78rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #4f6bff, #7c3aed);
-            color: white;
-            border: none;
-        }
+        header { padding: 80px 20px 50px; text-align: center; }
+        .badge { display: inline-block; font-family: 'Syne', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(79,107,255,0.3); background: rgba(79,107,255,0.08); padding: 6px 18px; border-radius: 100px; margin-bottom: 24px; }
+        h1 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 72px); font-weight: 800; letter-spacing: -3px; line-height: 1.0; margin-bottom: 16px; background: linear-gradient(135deg, #ffffff 30%, #4f6bff 70%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { font-family: 'Syne', sans-serif; font-size: 1rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+        .header-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 28px; border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, #4f6bff, #7c3aed); color: white; border: none; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79,107,255,0.4); }
-        .btn-outline {
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid rgba(79,107,255,0.4);
-        }
+        .btn-outline { background: transparent; color: var(--accent); border: 1px solid rgba(79,107,255,0.4); }
         .btn-outline:hover { background: rgba(79,107,255,0.1); transform: translateY(-2px); }
-        .btn-ghost {
-            background: rgba(255,255,255,0.04);
-            color: var(--dim);
-            border: 1px solid var(--border);
-            font-size: 0.72rem;
-        }
+        .btn-ghost { background: rgba(255,255,255,0.04); color: var(--dim); border: 1px solid var(--border); font-size: 0.72rem; }
         .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
-
-        /* SECTIONS */
         .section { max-width: 1100px; margin: 0 auto; padding: 20px 24px 40px; }
-        .section-label {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-        .section-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -6px; left: 0;
-            width: 40px; height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            border-radius: 2px;
-        }
-
-        /* ABOUT */
-        .about-text {
-            font-size: 1.05rem;
-            color: var(--dim);
-            max-width: 780px;
-            line-height: 1.8;
-        }
+        .section-label { font-family: 'Syne', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+        .section-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 24px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 40px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; }
+        .about-text { font-size: 1.05rem; color: var(--dim); max-width: 780px; line-height: 1.8; }
         .about-text strong { color: var(--text); }
-
-        /* EXPERIENCE */
-        .exp-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-            margin-bottom: 14px;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .exp-card::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--accent), var(--accent2));
-            border-radius: 3px 0 0 3px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+        .exp-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 14px; backdrop-filter: blur(12px); transition: all 0.3s; position: relative; overflow: hidden; }
+        .exp-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--accent), var(--accent2)); border-radius: 3px 0 0 3px; opacity: 0; transition: opacity 0.3s; }
         .exp-card:hover { border-color: rgba(79,107,255,0.25); transform: translateX(4px); }
         .exp-card:hover::before { opacity: 1; }
         .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
@@ -193,56 +43,16 @@
         .exp-card ul { color: var(--dim); font-size: 0.88rem; padding-left: 18px; }
         .exp-card li { margin-bottom: 4px; }
         .exp-card li strong { color: var(--text); }
-
-        /* TAGS */
-        .tag {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.58rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 100px;
-            background: rgba(79,107,255,0.1);
-            color: var(--accent);
-            border: 1px solid rgba(79,107,255,0.25);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .tag-green {
-            background: rgba(34,197,94,0.1);
-            color: #4ade80;
-            border-color: rgba(34,197,94,0.25);
-        }
-        .tag-purple {
-            background: rgba(124,58,237,0.1);
-            color: #a78bfa;
-            border-color: rgba(124,58,237,0.25);
-        }
-
-        /* SKILLS */
+        .tag { font-family: 'Syne', sans-serif; font-size: 0.58rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(79,107,255,0.1); color: var(--accent); border: 1px solid rgba(79,107,255,0.25); text-transform: uppercase; letter-spacing: 1px; }
+        .tag-green { background: rgba(34,197,94,0.1); color: #4ade80; border-color: rgba(34,197,94,0.25); }
+        .tag-purple { background: rgba(124,58,237,0.1); color: #a78bfa; border-color: rgba(124,58,237,0.25); }
+        .tag-orange { background: rgba(251,146,60,0.1); color: #fb923c; border-color: rgba(251,146,60,0.25); }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-        .skill-item {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 16px;
-            font-size: 0.88rem;
-            transition: all 0.3s;
-            backdrop-filter: blur(8px);
-        }
+        .skill-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; font-size: 0.88rem; transition: all 0.3s; backdrop-filter: blur(8px); }
         .skill-item:hover { border-color: rgba(79,107,255,0.2); }
         .skill-item b { color: var(--accent); display: block; margin-bottom: 4px; font-family: 'Syne', sans-serif; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
         .skill-item span { color: var(--dim); }
-
-        /* PROJECTS */
-        .project {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            transition: all 0.4s;
-            backdrop-filter: blur(12px);
-        }
+        .project { background: var(--card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 20px; overflow: hidden; transition: all 0.4s; backdrop-filter: blur(12px); }
         .project:hover { border-color: rgba(79,107,255,0.3); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
         .image-grid { display: grid; gap: 2px; background: #000; }
         .image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
@@ -250,75 +60,34 @@
         .image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
         .image-grid img { width: 100%; height: 220px; object-fit: cover; opacity: 0.85; transition: 0.5s; display: block; }
         .project:hover .image-grid img { opacity: 1; }
-
         .project-content { padding: 24px; }
         .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
         .project-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 14px; color: var(--text); }
-
         .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 18px; }
-        .detail-block h4 {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .detail-block h4 { font-family: 'Syne', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .detail-block h4::before { content: ''; width: 14px; height: 2px; background: var(--accent); border-radius: 2px; }
         .detail-block p, .detail-block li { color: var(--dim); font-size: 0.85rem; line-height: 1.6; }
         .detail-block ul { padding-left: 16px; }
         .detail-block li { margin-bottom: 3px; }
         .detail-block li strong { color: var(--text); }
-
-        /* DIVIDER */
         .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 10px 0 30px; }
-
-        /* BOTTOM SECTIONS */
         .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-        .info-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px;
-            backdrop-filter: blur(8px);
-        }
+        .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; backdrop-filter: blur(8px); }
         .info-card .section-title { font-size: 1.1rem; margin-bottom: 16px; }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 60px 20px 40px;
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
-        }
+        footer { text-align: center; padding: 60px 20px 40px; border-top: 1px solid var(--border); margin-top: 40px; }
         footer a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
         footer a:hover { opacity: 0.7; }
         .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-
-        /* REVEAL ANIMATIONS */
         .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .image-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
-            .image-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
-            .image-grid img { height: 160px; }
-            h1 { letter-spacing: -2px; }
-        }
+        @media (max-width: 600px) { .image-grid.cols-3 { grid-template-columns: repeat(2, 1fr); } .image-grid.cols-4 { grid-template-columns: repeat(2, 1fr); } .image-grid img { height: 160px; } h1 { letter-spacing: -2px; } }
     </style>
 </head>
 <body>
-
 <div class="bg-grid"></div>
 <div class="bg-orb orb1"></div>
 <div class="bg-orb orb2"></div>
 
-<!-- HEADER -->
 <header>
     <div class="reveal">
         <div class="badge">Level Designer · UE5 · Environment Design</div>
@@ -332,27 +101,19 @@
     </div>
 </header>
 
-<!-- ABOUT -->
 <div class="section reveal">
     <div class="section-label">Who I Am</div>
     <h2 class="section-title">About Me</h2>
-    <p class="about-text">
-        Level Designer with hands-on studio experience in <strong>Unreal Engine 5</strong> — focused on player flow, spatial storytelling, and environment design. I've worked on co-op puzzle levels and shipped stealth levels at studio. In the last few months I've also picked up <strong>Android game development</strong>, <strong>vibe coding with AI tools</strong>, and <strong>performance marketing basics</strong> — always pushing to grow beyond one lane.
-    </p>
+    <p class="about-text">Level Designer with hands-on studio experience in <strong>Unreal Engine 5</strong> — focused on player flow, spatial storytelling, and environment design. I've shipped stealth levels on Steam, built co-op puzzle levels at studio, and developed personal projects ranging from psychological horror to zombie survival environments. I also build mobile games independently under <strong>BrainKraft</strong>.</p>
 </div>
 
 <div class="divider"></div>
 
-<!-- EXPERIENCE -->
 <div class="section reveal">
     <div class="section-label">Work History</div>
     <h2 class="section-title">Experience</h2>
-
     <div class="exp-card">
-        <div class="exp-header">
-            <span class="exp-company">Underdogs Studio — Mumbai</span>
-            <span class="tag">Dec 2025 – May 2026</span>
-        </div>
+        <div class="exp-header"><span class="exp-company">Underdogs Studio — Mumbai</span><span class="tag">Dec 2025 – May 2026</span></div>
         <p class="exp-role">Level Designer (Remote)</p>
         <ul>
             <li>Developed <strong>synchronized co-op puzzles</strong> requiring dual-player coordination.</li>
@@ -360,12 +121,8 @@
             <li>Built and iterated greybox layouts based on playtesting feedback.</li>
         </ul>
     </div>
-
     <div class="exp-card">
-        <div class="exp-header">
-            <span class="exp-company">Akiyam — Gujarat</span>
-            <span class="tag">Feb 2023 – Jan 2024</span>
-        </div>
+        <div class="exp-header"><span class="exp-company">Akiyam — Gujarat</span><span class="tag">Feb 2023 – Jan 2024</span></div>
         <p class="exp-role">Level Designer · Assassin: The First List</p>
         <ul>
             <li>Designed and polished <strong>4 full stealth levels</strong> from blockout to high-fidelity environments.</li>
@@ -377,7 +134,6 @@
 
 <div class="divider"></div>
 
-<!-- SKILLS -->
 <div class="section reveal">
     <div class="section-label">What I Work With</div>
     <h2 class="section-title">Technical Skills</h2>
@@ -387,106 +143,73 @@
         <div class="skill-item"><b>Tech Art</b><span>Lumen Lighting, LOD, Optimization</span></div>
         <div class="skill-item"><b>Game Design</b><span>GDD, Economy Loops, System Design</span></div>
         <div class="skill-item"><b>Dev Tools</b><span>Vibe Coding, AI-assisted Workflows</span></div>
-        <div class="skill-item"><b>Marketing</b><span>Google Ads, Meta Ads, ROAS, CTR</span></div>
+        <div class="skill-item"><b>Mobile Dev</b><span>Android (Unity), AdMob, Play Store Pipeline</span></div>
     </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- PROJECTS -->
 <div class="section">
     <div class="section-label">My Work</div>
     <h2 class="section-title reveal">Featured Projects</h2>
 
-    <!-- CO-OP PROJECT -->
     <div class="project reveal">
-        <div class="image-grid cols-4">
-            <img src="coop1.png" alt="Co-op Level Screenshot 1">
-            <img src="coop2.png" alt="Co-op Level Screenshot 2">
-            <img src="coop3.png" alt="Co-op Level Screenshot 3">
-            <img src="coop4.png" alt="Co-op Level Screenshot 4">
-        </div>
+        <div class="image-grid cols-4"><img src="coop1.png" alt="Co-op 1"><img src="coop2.png" alt="Co-op 2"><img src="coop3.png" alt="Co-op 3"><img src="coop4.png" alt="Co-op 4"></div>
         <div class="project-content">
-            <div class="project-tags">
-                <span class="tag">Underdogs Studio</span>
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag tag-purple">Co-op Design</span>
-            </div>
+            <div class="project-tags"><span class="tag">Underdogs Studio</span><span class="tag">Unreal Engine 5</span><span class="tag tag-purple">Co-op Design</span></div>
             <p class="project-title">Co-op Puzzle Level — Underdogs Studio</p>
             <div class="details-grid">
-                <div class="detail-block">
-                    <h4>Design Strategy</h4>
-                    <ul>
-                        <li><strong>Split-path navigation</strong> for dual-player coordination</li>
-                        <li>Environment-based synchronized puzzle design</li>
-                        <li>Greybox → iteration → polish pipeline</li>
-                    </ul>
-                </div>
-                <div class="detail-block">
-                    <h4>Focus Areas</h4>
-                    <p>Designed levels that force meaningful teamwork — neither player can progress alone. Emphasis on readable spaces and intuitive co-op flow.</p>
-                </div>
+                <div class="detail-block"><h4>Design Strategy</h4><ul><li><strong>Split-path navigation</strong> for dual-player coordination</li><li>Environment-based synchronized puzzle design</li><li>Greybox → iteration → polish pipeline</li></ul></div>
+                <div class="detail-block"><h4>Focus Areas</h4><p>Designed levels that force meaningful teamwork — neither player can progress alone. Emphasis on readable spaces and intuitive co-op flow.</p></div>
             </div>
         </div>
     </div>
 
-    <!-- ASSASSIN -->
     <div class="project reveal">
-        <div class="image-grid cols-3">
-            <img src="Atf.png" alt="Assassin Level 1">
-            <img src="Atf1.png" alt="Assassin Level 2">
-            <img src="Atf2.png" alt="Assassin Level 3">
-        </div>
+        <div class="image-grid cols-3"><img src="Atf.png" alt="Assassin 1"><img src="Atf1.png" alt="Assassin 2"><img src="Atf2.png" alt="Assassin 3"></div>
         <div class="project-content">
-            <div class="project-tags">
-                <span class="tag">Akiyam Gujarat</span>
-                <span class="tag tag-green">Steam Release</span>
-            </div>
+            <div class="project-tags"><span class="tag">Akiyam Gujarat</span><span class="tag tag-green">Steam Release</span></div>
             <p class="project-title">Assassin: The First List</p>
             <div class="details-grid">
-                <div class="detail-block">
-                    <h4>Level Architecture</h4>
-                    <ul>
-                        <li><strong>4 full stealth levels</strong> designed & polished</li>
-                        <li>Non-linear paths with strategic verticality</li>
-                        <li>Cover placement for stealth gameplay loops</li>
-                    </ul>
-                </div>
-                <div class="detail-block">
-                    <h4>Pipeline</h4>
-                    <p>Full blockout to high-fidelity environment pipeline as part of the Akiyam team. Game shipped on Steam.</p>
-                </div>
+                <div class="detail-block"><h4>Level Architecture</h4><ul><li><strong>4 full stealth levels</strong> designed & polished</li><li>Non-linear paths with strategic verticality</li><li>Cover placement for stealth gameplay loops</li></ul></div>
+                <div class="detail-block"><h4>Pipeline</h4><p>Full blockout to high-fidelity environment pipeline as part of the Akiyam team. Game shipped on Steam.</p></div>
             </div>
             <a href="https://store.steampowered.com/app/2390670/ASSASSIN_The_First_List_Beta/" target="_blank" class="btn btn-primary">View on Steam ↗</a>
         </div>
     </div>
 
-    <!-- 3D HUSTLE -->
     <div class="project reveal">
-        <div class="image-grid cols-3">
-            <img src="3DP.png" alt="3D Hustle 1">
-            <img src="3DP1.png" alt="3D Hustle 2">
-            <img src="3DP2.png" alt="3D Hustle 3">
-        </div>
+        <div class="image-grid cols-4"><img src="zom1.png" alt="Zombie 1"><img src="zom2.png" alt="Zombie 2"><img src="zom3.png" alt="Zombie 3"><img src="zom4.png" alt="Zombie 4"></div>
         <div class="project-content">
-            <div class="project-tags">
-                <span class="tag">Unreal Engine</span>
-                <span class="tag">Itch.io</span>
+            <div class="project-tags"><span class="tag">Unreal Engine 5</span><span class="tag tag-orange">Personal Project</span><span class="tag tag-purple">Survival Design</span></div>
+            <p class="project-title">Zombie Survival Level — WWZ Inspired</p>
+            <div class="details-grid">
+                <div class="detail-block"><h4>Level Design</h4><ul><li>Underground metro facility with <strong>multi-zone layout</strong></li><li>Objective-based navigation with color-coded signaling</li><li>Cover systems and choke points for horde encounters</li></ul></div>
+                <div class="detail-block"><h4>Atmosphere</h4><p>Designed tension through spatial contrast — tight corridors opening into exposed areas. Blood decals and environmental storytelling used to communicate danger without UI.</p></div>
             </div>
+        </div>
+    </div>
+
+    <div class="project reveal">
+        <div class="image-grid cols-3"><img src="Horror1.png" alt="Horror 1"><img src="Horror2.png" alt="Horror 2"><img src="Horror3.png" alt="Horror 3"></div>
+        <div class="project-content">
+            <div class="project-tags"><span class="tag">Unreal Engine 5</span><span class="tag tag-purple">Lumen Lighting</span><span class="tag tag-purple">Prototype</span></div>
+            <p class="project-title">Psychological Horror Prototype</p>
+            <div class="details-grid">
+                <div class="detail-block"><h4>Emotional Pacing</h4><p>Controlled intensity using negative space and high-contrast lighting to build dread without explicit threat.</p></div>
+                <div class="detail-block"><h4>Lighting</h4><p>Lumen & dynamic shadow implementation used as narrative tool — light tells the story before the player does.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project reveal">
+        <div class="image-grid cols-3"><img src="3DP.png" alt="3D Hustle 1"><img src="3DP1.png" alt="3D Hustle 2"><img src="3DP2.png" alt="3D Hustle 3"></div>
+        <div class="project-content">
+            <div class="project-tags"><span class="tag">Unreal Engine</span><span class="tag">Itch.io</span></div>
             <p class="project-title">3D Hustle</p>
             <div class="details-grid">
-                <div class="detail-block">
-                    <h4>Game & Economy Design</h4>
-                    <ul>
-                        <li><strong>Authored complete GDD</strong> — see link below</li>
-                        <li>Designed core economy loop</li>
-                        <li>Platforming geometry optimized for player momentum</li>
-                    </ul>
-                </div>
-                <div class="detail-block">
-                    <h4>Level Flow</h4>
-                    <p>Focused on maintaining player momentum through carefully paced platforming geometry and intuitive spatial layout.</p>
-                </div>
+                <div class="detail-block"><h4>Game & Economy Design</h4><ul><li><strong>Authored complete GDD</strong> — see link below</li><li>Designed core economy loop</li><li>Platforming geometry optimized for player momentum</li></ul></div>
+                <div class="detail-block"><h4>Level Flow</h4><p>Focused on maintaining player momentum through carefully paced platforming geometry and intuitive spatial layout.</p></div>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
                 <a href="https://pranavkamat.itch.io/the-3d-hustle" target="_blank" class="btn btn-primary">Play on Itch.io ↗</a>
@@ -495,80 +218,52 @@
         </div>
     </div>
 
-    <!-- PSYCH HORROR -->
     <div class="project reveal">
-        <div class="image-grid cols-3">
-            <img src="Horror1.png" alt="Horror Level 1">
-            <img src="Horror2.png" alt="Horror Level 2">
-            <img src="Horror3.png" alt="Horror Level 3">
-        </div>
+        <div class="image-grid cols-2"><img src="DW1.png" alt="Dyeing World 1"><img src="DW2.png" alt="Dyeing World 2"></div>
         <div class="project-content">
-            <div class="project-tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag tag-purple">Lumen Lighting</span>
-                <span class="tag tag-purple">Prototype</span>
-            </div>
-            <p class="project-title">Psychological Horror Prototype</p>
-            <div class="details-grid">
-                <div class="detail-block">
-                    <h4>Emotional Pacing</h4>
-                    <p>Controlled intensity using negative space and high-contrast lighting to build dread without explicit threat.</p>
-                </div>
-                <div class="detail-block">
-                    <h4>Lighting</h4>
-                    <p>Lumen & dynamic shadow implementation used as narrative tool — light tells the story before the player does.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- DYEING WORLD -->
-    <div class="project reveal">
-        <div class="image-grid cols-2">
-            <img src="DW1.png" alt="Dyeing World 1">
-            <img src="DW2.png" alt="Dyeing World 2">
-        </div>
-        <div class="project-content">
-            <div class="project-tags">
-                <span class="tag">3D Platformer</span>
-                <span class="tag">Unreal Engine</span>
-                <span class="tag">Itch.io</span>
-            </div>
+            <div class="project-tags"><span class="tag">3D Platformer</span><span class="tag">Unreal Engine</span><span class="tag">Itch.io</span></div>
             <p class="project-title">The Dyeing World</p>
             <div class="details-grid">
-                <div class="detail-block">
-                    <h4>Navigation Design</h4>
-                    <p>Color-coded environment shapes designed to guide movement naturally — no UI waypoints needed.</p>
-                </div>
-                <div class="detail-block">
-                    <h4>Mechanics</h4>
-                    <p>Natural signposting with balanced reward traversal — every jump feels intentional.</p>
-                </div>
+                <div class="detail-block"><h4>Navigation Design</h4><p>Color-coded environment shapes designed to guide movement naturally — no UI waypoints needed.</p></div>
+                <div class="detail-block"><h4>Mechanics</h4><p>Natural signposting with balanced reward traversal — every jump feels intentional.</p></div>
             </div>
             <a href="https://limitlesswaves.itch.io/the-dyeing-world" target="_blank" class="btn btn-primary">View Project ↗</a>
         </div>
     </div>
 
-    <!-- SANTA'S REVENGE -->
     <div class="project reveal">
         <div class="project-content">
-            <div class="project-tags">
-                <span class="tag">Game Jam</span>
-                <span class="tag">Unity</span>
-                <span class="tag">48 Hours</span>
-            </div>
+            <div class="project-tags"><span class="tag">Game Jam</span><span class="tag">Unity</span><span class="tag">48 Hours</span></div>
             <p class="project-title">Santa's Revenge</p>
             <div class="details-grid">
-                <div class="detail-block">
-                    <h4>Rapid Iteration</h4>
-                    <p>Designed a complete linear combat arena under a strict 48-hour game jam deadline.</p>
-                </div>
-                <div class="detail-block">
-                    <h4>Arena Design</h4>
-                    <p>Managed asset packs to create a readable combat loop with clear spatial hierarchy.</p>
-                </div>
+                <div class="detail-block"><h4>Rapid Iteration</h4><p>Designed a complete linear combat arena under a strict 48-hour game jam deadline.</p></div>
+                <div class="detail-block"><h4>Arena Design</h4><p>Managed asset packs to create a readable combat loop with clear spatial hierarchy.</p></div>
             </div>
             <a href="https://zombi3d.itch.io/santas-revenge" target="_blank" class="btn btn-primary">Play Game ↗</a>
+        </div>
+    </div>
+
+    <div class="project reveal">
+        <div class="image-grid cols-3"><img src="mm1.png" alt="Mirror Mind 1"><img src="mm2.png" alt="Mirror Mind 2"><img src="mm3.png" alt="Mirror Mind 3"></div>
+        <div class="project-content">
+            <div class="project-tags"><span class="tag">BrainKraft</span><span class="tag">Unity</span><span class="tag tag-green">Android</span></div>
+            <p class="project-title">Mirror Mind — Mobile Game</p>
+            <div class="details-grid">
+                <div class="detail-block"><h4>Game Design</h4><ul><li>Pattern mirroring puzzle mechanics with <strong>3 difficulty levels</strong></li><li>Daily challenge system and streak tracking</li><li>Designed for short session engagement</li></ul></div>
+                <div class="detail-block"><h4>Development</h4><p>Built independently using Unity and AI-assisted workflows. Full pipeline from concept to Play Store submission.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project reveal">
+        <div class="image-grid cols-2"><img src="lp1.png" alt="Letter Panic 1"><img src="lp2.png" alt="Letter Panic 2"></div>
+        <div class="project-content">
+            <div class="project-tags"><span class="tag">BrainKraft</span><span class="tag">Unity</span><span class="tag tag-green">Android</span></div>
+            <p class="project-title">Letter Panic — Mobile Game</p>
+            <div class="details-grid">
+                <div class="detail-block"><h4>Game Design</h4><ul><li>Fast-paced letter catching with <strong>case sensitivity mechanics</strong></li><li>Classic, Zen, and Speed modes for different playstyles</li><li>Badge system and daily challenge for retention</li></ul></div>
+                <div class="detail-block"><h4>Development</h4><p>Built independently using Unity. Designed to test cognitive speed and pattern recognition under time pressure.</p></div>
+            </div>
         </div>
     </div>
 
@@ -576,7 +271,6 @@
 
 <div class="divider"></div>
 
-<!-- EDUCATION + CERTS -->
 <div class="section reveal">
     <div class="two-col">
         <div class="info-card">
@@ -596,7 +290,6 @@
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-links">
         <a href="mailto:kumarpandanitish038@gmail.com">kumarpandanitish038@gmail.com</a>
@@ -608,9 +301,7 @@
 
 <script>
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
